@@ -6,14 +6,15 @@ import (
 )
 
 func main() {
-
-	var userHeight = 1.83
-	var userKg float64 = 81
+	const IMTPower = 2
+	var userHeight float64
+	var userKg float64
 	fmt.Print("__ Калькулятор индекса массы тела __\n")
-	fmt.Print("Введите свой рост: ")
+	fmt.Print("Введите свой рост в метрах : ")
 	fmt.Scan(&userHeight)
 	fmt.Print("Введите свой вес: ")
-	fmt.Scan(userKg)
-	var IMT = userKg / math.Pow(userHeight, 2)
+	fmt.Scan(&userKg)
+	IMT := userKg / math.Pow(userHeight, IMTPower)
+	fmt.Print("Ваш идекс массы тела:")
 	fmt.Print(IMT)
 }
