@@ -9,13 +9,17 @@ import (
 const IMTPower = 2
 
 func main() {
+	defer func() {
+		if r 
+	}
 	for {
 		fmt.Println("__ Калькулятор индекса массы тела __")
 		userKg, userHeight := getUserInput()
 		IMT, err := calculateIMT(userKg, userHeight)
 		if err != nil {
-			fmt.Println("Не заданы параметры для расчета")
-			continue
+			panic("Неправильно заданы параметры")
+			//fmt.Println("Не заданы параметры для расчета")
+			//continue
 		}
 		outputResult(IMT)
 		isRepeatCalculation := checkRepeatCalculation()
